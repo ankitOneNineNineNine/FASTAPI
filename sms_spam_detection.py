@@ -24,10 +24,10 @@ warnings.simplefilter(action='ignore', category=Warning)
 #import contractions
 
 import nltk
-#nltk.download('wordnet')
+nltk.download('wordnet')
 
-#nltk.download('stopwords')
-
+nltk.download('stopwords')
+nltk.download('omw-1.4')
 # from google.colab import files
 # uploads = files.upload()
 
@@ -151,9 +151,9 @@ predictions = pipeline.predict(msg_test)
 
 from sklearn.metrics import classification_report,confusion_matrix
 
-print(classification_report(label_test, predictions))
+# print(classification_report(label_test, predictions))
 
-print(confusion_matrix(label_test, predictions))
+# print(confusion_matrix(label_test, predictions))
 
 
 
@@ -170,9 +170,9 @@ pipeline2 = Pipeline([
 pipeline2.fit(msg_train, label_train)
 
 predictions2 = pipeline2.predict(msg_test)
-print(classification_report(label_test, predictions2))
+# print(classification_report(label_test, predictions2))
 
-print(confusion_matrix(label_test, predictions2))
+# print(confusion_matrix(label_test, predictions2))
 
 predict_msg =["You are awarded a Nikon Digital Camera. Call now","Call me","What's up?"]
 
