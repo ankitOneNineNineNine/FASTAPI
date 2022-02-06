@@ -175,7 +175,7 @@ predictions = pipeline.predict(msg_test)
 # # print(confusion_matrix(label_test, predictions2))
 
 # predict_msg =["You are awarded a Nikon Digital Camera. Call now","Call me","What's up?"]
-
+# 
 # pipeline.predict(predict_msg)
 
 # pipeline2.predict(predict_msg)
@@ -190,7 +190,7 @@ with open(Pkl_Filename, 'wb') as file:
 with open(Pkl_Filename, 'rb') as file:  
     Pickled_Spam_detection_using_NB_Model = pickle.load(file)
 
-Pickled_Spam_detection_using_NB_Model.predict(predict_msg)
+# Pickled_Spam_detection_using_NB_Model.predict(predict_msg)
 
 # import joblib
 
