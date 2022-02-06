@@ -24,10 +24,10 @@ warnings.simplefilter(action='ignore', category=Warning)
 #import contractions
 
 import nltk
-nltk.download('wordnet')
+# nltk.download('wordnet')
 
-nltk.download('stopwords')
-nltk.download('omw-1.4')
+# nltk.download('stopwords')
+# nltk.download('omw-1.4')
 # from google.colab import files
 # uploads = files.upload()
 
@@ -149,36 +149,36 @@ pipeline.fit(msg_train, label_train)
 
 predictions = pipeline.predict(msg_test)
 
-from sklearn.metrics import classification_report,confusion_matrix
+# from sklearn.metrics import classification_report,confusion_matrix
 
-# print(classification_report(label_test, predictions))
+# # print(classification_report(label_test, predictions))
 
-# print(confusion_matrix(label_test, predictions))
+# # print(confusion_matrix(label_test, predictions))
 
 
 
-"""Random Forest Classifier"""
+# """Random Forest Classifier"""
 
-from sklearn.ensemble import RandomForestClassifier
+# from sklearn.ensemble import RandomForestClassifier
 
-pipeline2 = Pipeline([
-    ('bow', CountVectorizer(analyzer=text_processing)),
-    ('tfidf', TfidfTransformer()),
-    ('classifier', RandomForestClassifier())
-])
+# pipeline2 = Pipeline([
+#     ('bow', CountVectorizer(analyzer=text_processing)),
+#     ('tfidf', TfidfTransformer()),
+#     ('classifier', RandomForestClassifier())
+# ])
 
-pipeline2.fit(msg_train, label_train)
+# pipeline2.fit(msg_train, label_train)
 
-predictions2 = pipeline2.predict(msg_test)
-# print(classification_report(label_test, predictions2))
+# predictions2 = pipeline2.predict(msg_test)
+# # print(classification_report(label_test, predictions2))
 
-# print(confusion_matrix(label_test, predictions2))
+# # print(confusion_matrix(label_test, predictions2))
 
-predict_msg =["You are awarded a Nikon Digital Camera. Call now","Call me","What's up?"]
+# predict_msg =["You are awarded a Nikon Digital Camera. Call now","Call me","What's up?"]
 
-pipeline.predict(predict_msg)
+# pipeline.predict(predict_msg)
 
-pipeline2.predict(predict_msg)
+# pipeline2.predict(predict_msg)
 
 import pickle
 
@@ -192,8 +192,8 @@ with open(Pkl_Filename, 'rb') as file:
 
 Pickled_Spam_detection_using_NB_Model.predict(predict_msg)
 
-import joblib
+# import joblib
 
-joblib_file = "Spam_detection_RF_joblib.pkl"  
-joblib.dump(pipeline2, joblib_file)
+# joblib_file = "Spam_detection_RF_joblib.pkl"  
+# joblib.dump(pipeline2, joblib_file)
 
