@@ -3,7 +3,7 @@ from fastapi import FastAPI
 import numpy as np
 import pandas as pd
 import pickle
-
+import os
 
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -44,5 +44,6 @@ def predict_spamham(line):
     }
 
 
+PORT = os.getenv('PORT',8000)
 if __name__ == '__main__':
-    uvicorn.run(app, host='0.0.0.0', port=80)
+    uvicorn.run(app, host='127.0.0.1', port=PORT)
